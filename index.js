@@ -19,7 +19,10 @@ let lastMemeTitle = null;
 
 // Hàm lấy danh sách meme từ trang web
 async function fetchMemeList() {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
     const page = await browser.newPage();
 
     // Mở trang và chờ nội dung tải xong
