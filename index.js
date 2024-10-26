@@ -26,7 +26,7 @@ async function fetchMemeList() {
     const page = await browser.newPage();
 
     // Mở trang và chờ nội dung tải xong
-    await page.goto('https://xabuon.com/hai-huoc', { waitUntil: 'networkidle2' });
+    await page.goto('https://xabuon.com', { waitUntil: 'networkidle2' });
 
     // Đợi các phần tử được thêm vào bởi JavaScript
     const memes = await page.evaluate(() => {
